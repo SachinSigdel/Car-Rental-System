@@ -14,7 +14,7 @@ import view.HomePage;
  * @author sachinsigdel
  */
 public class DeleteCar {
-    LinkedList<Car> carList = HomePage.cars; // reference to cars linked list from HomePage
+    LinkedList<Car> carList = HomePage.cars; 
     IsIdDuplicate refDup = new IsIdDuplicate(); // reference to IsIdDuplicate class to use the isDuplicate function.
     public void deleteCar(HomePage frame, int id) {
         if(refDup.isDuplicate(id)) JOptionPane.showMessageDialog(frame, "Couldn't find the car!");

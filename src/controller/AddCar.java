@@ -13,9 +13,8 @@ import view.HomePage;
  * @author sachinsigdel
  */
 public class AddCar {
-    LinkedList<Car> carList = HomePage.cars;
     IsIdDuplicate refDup = new IsIdDuplicate();
-    public void addCar(HomePage frame, int id, String brand, String color, double rent, boolean isAvailable) {
+    public void addCar(LinkedList<Car> carList, HomePage frame, int id, String brand, String color, double rent, boolean isAvailable) {
         if(!refDup.isDuplicate(id)) {
             JOptionPane.showMessageDialog(frame, "The id is already used!");
             return;
