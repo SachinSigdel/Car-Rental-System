@@ -7,6 +7,7 @@ package view;
 import javax.swing.JOptionPane;
 import javax.swing.ImageIcon;
 import java.awt.Image;
+import java.util.LinkedList;
 import model.User;
 import static view.CreateAccount.users;
 /**
@@ -16,7 +17,8 @@ import static view.CreateAccount.users;
 public class LoginPage extends javax.swing.JFrame {
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(LoginPage.class.getName());
-    User refUser = new User();
+    LinkedList<User> userList = CreateAccount.users;
+//    User refUser = new User();
 //    private String adminUsername = "Admin";
 //    private String adminPassword = "admin123";
 //    
@@ -33,6 +35,11 @@ public class LoginPage extends javax.swing.JFrame {
      */
     public LoginPage() {
         initComponents();
+        initialUser();
+    }
+    
+    public void initialUser() {
+        userList.add(new User("admin","admin123"));
     }
 
     /**
@@ -164,6 +171,7 @@ public class LoginPage extends javax.swing.JFrame {
                   home.getAdminButton().setVisible(false);
                 }
                 home.getActiveUser().setText("Welcome "+each.getUsername()+" 🙏");
+                JOptionPane.showMessageDialog(this, "Logged in successfully!");
                 home.setVisible(true);
                 this.dispose();
                 found = true;
